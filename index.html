@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+   <title>SUDOKU</title>
+  <script src="index.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+ <body>
+	<h1>Sudoku App</h1>
+	<a href="#" onclick="showInstructions()">
+		How To play Sudoku
+	</a>
+		<div id="help">
+			<p>The classic Sudoku game involves a grid of 81 squares. The grid is divided into nine blocks, each containing nine squares. The rules of the game are simple: each of the nine blocks has to contain all the numbers 1-9 within its squares. Each number can only appear once in a row, column or box.</p>
+		</div>
+ 	<div id="grid" >
+		<table id = "gamesGrid" cellpadding="0" cellspacing="0" >
+			<tr id="A" class="border_top">
+				<td id="A1" class="border_left"><input class="" id="IA1" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="A2"><input class="" id="IA2" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="A3" class="border_right"><input class="" id="IA3" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="A4"><input class="" id="IA4" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="A5"><input class="" id="IA5" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="A6" class="border_right"><input class="" id="IA6" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="A7"><input class="" id="IA7" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="A8"><input class="" id="IA8" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="A9" class="border_right"><input class="" id="IA9" maxlength="1"  autocomplete="off" size="2"></td>	
+			</tr>
+			<tr id="B">
+				<td id="B1" class="border_left"><input class="" id="IB1" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="B2"><input class="" id="IB2" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="B3" class="border_right"><input class="" id="IB3" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="B4"><input class="" id="IB4" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="B5"><input class="" id="IB5" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="B6" class="border_right"><input class="" id="IB6" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="B7"><input class="" id="IB7" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="B8"><input class="" id="IB8" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="B9" class="border_right"><input class="" id="IB9" maxlength="1"  autocomplete="off" size="2"></td>	
+			</tr>
+			<tr class="border_bottom" id="C">
+				<td id="C1" class="border_left"><input class="" id="IC1" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="C2"><input class="" id="IC2" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="C3" class="border_right"><input class="" id="IC3" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="C4"><input class="" id="IC4" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="C5"><input class="" id="IC5" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="C6" class="border_right"><input class="" id="IC6" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="C7"><input class="" id="IC7" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="C8"><input class="" id="IC8" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="C9" class="border_right"><input class="" id="IC9" maxlength="1"  autocomplete="off" size="2"></td>	
+			</tr>
+			<tr id="D">
+				<td id="D1" class="border_left"><input class="" id="ID1" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="D2"><input class="" id="ID2" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="D3" class="border_right"><input class="" id="ID3" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="D4"><input class="" id="ID4" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="D5"><input class="" id="ID5" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="D6" class="border_right"><input class="" id="ID6" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="D7"><input class="" id="ID7" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="D8"><input class="" id="ID8" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="D9" class="border_right"><input class="" id="ID9" maxlength="1"  autocomplete="off" size="2"></td>	
+			</tr>
+			<tr id="E">
+				<td id="E1" class="border_left"><input class="" id="IE1" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="E2"><input class="" id="IE2" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="E3" class="border_right"><input class="" id="IE3" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="E4"><input class="" id="IE4" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="E5"><input class="" id="IE5" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="E6" class="border_right"><input class="" id="IE6" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="E7"><input class="" id="IE7" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="E8"><input class="" id="IE8" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="E9" class="border_right"><input class="" id="IE9" maxlength="1"  autocomplete="off" size="2"></td>	
+			</tr>
+			<tr class="border_bottom" id="F">
+				<td id="F1" class="border_left"><input class="" id="IF1" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="F2"><input class="" id="IF2" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="F3" class="border_right"><input class="" id="IF3" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="F4"><input class="" id="IF4" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="F5"><input class="" id="IF5" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="F6" class="border_right"><input class="" id="IF6" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="F7"><input class="" id="IF7" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="F8"><input class="" id="IF8" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="F9" class="border_right"><input class="" id="IF9" maxlength="1"  autocomplete="off" size="2"></td>	
+			</tr>
+			<tr id="G">
+				<td id="G1" class="border_left"><input class="" id="IG1" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="G2"><input class="" id="IG2" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="G3" class="border_right"><input class="" id="IG3" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="G4"><input class="" id="IG4" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="G5"><input class="" id="IG5" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="G6" class="border_right"><input class="" id="IG6" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="G7"><input class="" id="IG7" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="G8"><input class="" id="IG8" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="G9" class="border_right"><input class="" id="IG9" maxlength="1"  autocomplete="off" size="2"></td>	
+			</tr>
+			<tr id="H">
+				<td id="H1" class="border_left"><input class="" id="IH1" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="H2"><input class="" id="IH2" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="H3" class="border_right"><input class="" id="IH3" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="H4"><input class="" id="IH4" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="H5"><input class="" id="IH5" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="H6" class="border_right"><input class="" id="IH6" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="H7"><input class="" id="IH7" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="H8"><input class="" id="IH8" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="H9" class="border_right"><input class="" id="IH9" maxlength="1"  autocomplete="off" size="2"></td>	
+			</tr>
+			<tr id="I" class="border_bottom">
+				<td id="I1" class="border_left"><input class="" id="II1" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="I2"><input class="" id="II2" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="I3" class="border_right"><input class="" id="II3" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="I4"><input class="" id="II4" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="I5"><input class="" id="II5" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="I6" class="border_right"><input class="" id="II6" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="I7"><input class="" id="II7" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="I8"><input class="" id="II8" maxlength="1"  autocomplete="off" size="2"></td>
+				<td id="I9" class="border_right"><input class="" id="II9" maxlength="1"  autocomplete="off" size="2"></td>	
+			</tr>
+		</table>
+		<button id="start" onclick="DisplaysGridValue()">StartGame</button>
+		<button id="quit" onclick="solveTheSudoku()">Solve</button>
+		<button id="refresh" onclick="window.location.reload()">PlayAgain</button>	
+ 	</div>
+ 	<table id="timer" border="1px">
+ 		<tr>
+ 		<th>H</th>
+ 		<th>M</th>
+ 		<th>S</th>
+ 		</tr>
+ 		<tr>
+ 			<td id="hour"></td>
+ 			<td id="minutes"></td>
+ 			<td id="sec"></td>
+ 		</tr>
+ 	</table>
+ </body>
+ </html>
